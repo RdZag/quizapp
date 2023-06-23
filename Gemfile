@@ -60,7 +60,6 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'ruby_audit'
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
