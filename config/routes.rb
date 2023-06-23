@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
-  #get 'home/index'
+  # get 'home/index'
 
   root 'home#index'
   get 'home/questions'
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
   post '/submit', to: 'home#submit', as: 'submit'
   get '/result', to: 'home#result', as: 'result'
   get 'home/flag'
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

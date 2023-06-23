@@ -4,7 +4,7 @@
 <% if @user %>
   <p>Hi <%= @user.email %>!</p>
   <p>You have answered <%= @user.score %> questions correctly.</p>
-  <%= link_to "Back to Quiz", root_path %>
+  <%= link_to "Back to Home", root_path %>
 <% else %>
   <p>No user found.</p>
   <%= link_to "Check Score", result_path %>
