@@ -1,0 +1,23 @@
+<h1>Quiz</h1>
+
+<%= form_tag(submit_path) do %>
+  <% @questions.each_with_index do |question, index| %>
+    <% if index == 0 %>
+      <h2><%= question.content %></h2>
+    <% end %>
+
+    <p>
+      <%= radio_button_tag "question_#{question.id}", question.answers.first.id %>
+      <%= question.answers.first.content %>
+    </p>
+
+    <% question.answers[1..].each do |answer| %>
+      <p>
+        <%= radio_button_tag "question_#{question.id}", answer.id %>
+        <%= answer.content %>
+      </p>
+    <% end %>
+  <% end %>
+
+  <%= submit_tag "Submit" %>
+<% end %>

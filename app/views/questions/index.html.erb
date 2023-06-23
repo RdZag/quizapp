@@ -1,0 +1,21 @@
+<!-- app/views/quiz/index.html.erb -->
+<h1>Quiz</h1>
+
+<%= form_tag(submit_path) do %>
+<!-- <label>Name:</label>-->
+<!-- <%= text_field_tag :name %> -->
+
+  <% @questions.each do |question| %>
+    <h2><%= question.content %></h2>
+
+    <% question.answers.each do |answer| %>
+      <p>
+        <%= radio_button_tag "question_#{question.id}", answer.id %>
+        <%= answer.content %>
+      </p>
+    <% end %>
+    <!-- <%= link_to "Flag This Question", home_flag_path %> -->
+  <% end %>
+
+<% end %>
+<%= submit_tag "Submit" %>
